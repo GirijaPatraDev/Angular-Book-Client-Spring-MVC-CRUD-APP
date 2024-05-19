@@ -1,0 +1,12 @@
+<h1>Create Book</h1>
+<form (ngSubmit)="addBook(bookForm.value); bookForm.resetForm()" #bookForm="ngForm">
+    Book Name<input type="text" name="name" ngModel required/>
+    Author<input type="text" name="author" ngModel required/>
+    Price<input type="text" name="price" ngModel required/>
+    Qty<input type="text" name="qty" ngModel required/>
+    <button type="submit">
+        create
+    </button>
+</form>
+<p *ngIf="createdResp">{{createdResp}}</p>
+<p *ngIf="firstErrorMsg">{{firstErrorMsg}}</p>
